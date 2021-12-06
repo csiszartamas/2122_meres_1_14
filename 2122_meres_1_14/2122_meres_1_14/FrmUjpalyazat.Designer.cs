@@ -48,6 +48,7 @@ namespace _2122_meres_1_14
             this.button1.TabIndex = 0;
             this.button1.Text = "Új pályázat hírdetése";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -110,6 +111,7 @@ namespace _2122_meres_1_14
             // 
             // tbID
             // 
+            this.tbID.Enabled = false;
             this.tbID.Location = new System.Drawing.Point(56, 82);
             this.tbID.Name = "tbID";
             this.tbID.Size = new System.Drawing.Size(35, 20);

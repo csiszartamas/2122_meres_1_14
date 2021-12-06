@@ -72,6 +72,7 @@ namespace _2122_meres_1_14
             this.szamlakosszege});
             this.dgv.Location = new System.Drawing.Point(64, 54);
             this.dgv.Name = "dgv";
+            this.dgv.RowHeadersVisible = false;
             this.dgv.Size = new System.Drawing.Size(693, 274);
             this.dgv.TabIndex = 2;
             // 

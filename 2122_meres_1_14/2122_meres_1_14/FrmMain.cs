@@ -31,13 +31,12 @@ namespace _2122_meres_1_14
             {
                 
                 c.Open();
-                //var keretosszeg = "SELECT tervezetA,tervezetB FROM palyazat;";
-                var r = new SqlCommand("SELECT palyazat.id,sum(palyazat.tervezetC + palyazat.tervezetA), count(szamla.szamlaszam), sum(szamla.ertek) "
+                var r = new SqlCommand("SELECT palyazat.id,palyazat.tervezetC + palyazat.tervezetA, count(szamla.szamlaszam), sum(szamla.ertek) "
                     +"FROM koltsegtipus,szamla,palyazat "
                     +"WHERE palyazat.id = szamla.palyazatId "
                     +"and szamla.koltsegtipusId = koltsegtipus.id "
-                    +"GROUP BY palyazat.id order by palyazat.id", c).ExecuteReader();
-
+                    +"GROUP BY palyazat.id,palyazat.tervezetC + palyazat.tervezetA order by palyazat.id", c).ExecuteReader();
+                
                 while (r.Read())
                 {
                     dgv.Rows.Add(r[0], r[1], r[2], r[3] );
